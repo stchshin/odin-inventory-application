@@ -71,7 +71,10 @@ VALUES
 
 async function main() {
   console.log("seeding...");
-  const client = new Client();
+  const connectionString = process.argv[2];
+  const client = new Client({
+    connectionString: connectionString
+  });
   await client.connect();
   await client.query(SQL);
   await client.end();
