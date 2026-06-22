@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('../nav') %>
+    <div class="add">
+        <h2>Add New Case</h2>
+        <form action="/add/case" method="POST">
+            <label for="name">Name: 
+                <input id="name" type="text" name="name" required>
+            </label>
+            <label for="game">Game: 
+                <%- include('gameSelect', {games: games, selected: false}) %>
+            </label>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

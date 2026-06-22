@@ -1,0 +1,13 @@
+<select name="owner" id="owner">
+    <% owners.forEach((owner) => { %>
+        <% if (selected) { %>
+            <% if (owner.id == selected) { %>
+                <option value="<%= owner.id %>" selected ><%= owner.name %></option>
+            <% } else { %>
+                <option value="<%= owner.id %>"><%= owner.name %></option>
+            <% } %>
+        <% } else { %>
+            <option value="<%= owner.id %>"><%= owner.name %></option>
+        <% } %>
+    <% }); %>
+</select>

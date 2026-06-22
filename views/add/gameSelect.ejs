@@ -1,0 +1,13 @@
+<select name="game" id="game">
+    <% games.forEach((game) => { %>
+        <% if (selected) { %>
+            <% if (game.id == Number(selected)) { %>
+                <option selected value="<%= game.id %>"><%= game.name %></option>
+            <% } else { %>
+                <option value="<%= game.id %>"><%= game.name %></option>
+            <% } %>
+        <% } else { %>
+            <option value="<%= game.id %>"><%= game.name %></option>
+        <% } %>
+    <% }); %>
+</select>

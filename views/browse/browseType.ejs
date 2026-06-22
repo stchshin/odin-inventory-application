@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('../nav') %>
+    <div class="browseResult">
+        <div>
+            <h1><%= type.name %></h1>
+            <form action="/browse/types/edit/<%= type.id %>" method="GET" >
+                <button>Edit</button>
+            </form>
+            <form action="/browse/types/delete" method="POST" >
+                <input type="hidden" name="typeId" value="<%= type.id %>">
+                <button>Delete</button>
+            </form>
+        </div>
+        <div class="evidenceCards">
+            <% evidences.forEach((evidence) => { %>
+                <%- include('../evidenceCard', {evidence: evidence}); %>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('../nav') %>
+    <div class="add">
+        <h2>Edit Type: <%= type.name %></h2>
+        <form action="/browse/types/edit/<%= type.id %>" method="POST">
+            <label for="name">Name: 
+                <input id="name" type="text" name="name" value="<%= type.name %>" required>
+            </label>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

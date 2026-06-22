@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('../nav') %>
+    <div class="browse browseGames">
+        <h2><%= game.name %></h2>
+        <ul>
+            <% cases.forEach((c) => { %>
+                <li><a href="./<%= game.id %>/<%= c.id %>"><%= c.name %></a></li>
+            <% }); %>
+        </ul>
+        <div class="evidenceCards">
+            <% evidences.forEach((evidence) => { %>
+                <%- include('../evidenceCard', {evidence: evidence}); %>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>

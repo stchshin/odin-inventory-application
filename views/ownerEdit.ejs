@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('nav') %>
+    <div class="add">
+        <h2>Edit Owner: <%= owner.name %></h2>
+        <form action="/owners/edit/<%= owner.id %>" method="POST">
+            <label for="name">Name: 
+                <input id="name" type="text" name="name" value="<%= owner.name %>" required>
+            </label>
+            <label for="occupation">Occupation: 
+                <input id="occupation" type="text" name="occupation" value="<%= owner.occupation %>" required>
+            </label>
+            <label for="imageUrl">Image URL: </label>
+            <input id="imageUrl" type="text" name="imageUrl" value="<%= owner.image_url %>" required>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

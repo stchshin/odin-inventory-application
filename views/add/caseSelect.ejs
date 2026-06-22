@@ -1,0 +1,13 @@
+<select name="case" id="case">
+    <% cases.forEach((c) => { %>
+        <% if (selected) { %>
+            <% if (c.id == Number(selected)) { %>
+                <option selected value="<%= c.id %>"><%= c.name %></option>
+            <% } else { %>
+                <option value="<%= c.id %>"><%= c.name %></option>
+            <% } %>
+        <% } else { %>
+            <option value="<%= c.id %>"><%= c.name %></option>
+        <% } %>
+    <% }); %>
+</select>
